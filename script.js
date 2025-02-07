@@ -24,3 +24,14 @@ function handleNoClick() {
 function handleYesClick() {
     window.location.href = "yes_page.html";
 }
+document.addEventListener("DOMContentLoaded", function() {
+    var audio = new Audio('sajna.mp3');
+    audio.loop = true;
+
+    var noButton = document.querySelector('.no-button');
+    noButton.addEventListener("click", function() {
+        audio.play().catch(error => {
+            console.log('Auto-play was prevented:', error);
+        });
+    });
+});
